@@ -1,0 +1,103 @@
+{
+  "type": "record",
+  "namespace": "com.codr.avro",
+  "name": "CarData",
+  "version": "1",
+  "fields": [
+    {
+      "name": "coolant_temp",
+      "type": "float",
+      "doc": "battery/engine coolant temperature in °C"
+    },
+    {
+      "name": "intake_air_temp",
+      "type": "float",
+      "doc": "Air intake temperature in °C"
+    },
+    {
+      "name": "intake_air_flow_speed",
+      "type": "float",
+      "doc": "Air intake mass g/s"
+    },
+    {
+      "name": "battery_percentage",
+      "type": "float",
+      "doc": "Battery cell total percentage left"
+    },
+    {
+      "name": "battery_voltage",
+      "type": "float",
+      "doc": "Battery pack voltage in mV"
+    },
+    {
+      "name": "current_draw",
+      "type": "float",
+      "doc": "Current in A drawn from the battery"
+    },
+    {
+      "name": "speed",
+      "type": "float",
+      "doc": "Speed of the vehicle based on engine sensors in m/s"
+    },
+    {
+      "name": "engine_vibration_amplitude",
+      "type": "float",
+      "doc": "Measured engine vibration, might indicate mechanical failure of engine or drive shaft. Picked up by piezoelectric element, measured in mV"
+    },
+    {
+      "name": "throttle_pos",
+      "type": "float",
+      "doc": "How far the throttle is pushed [0..1]"
+    },
+    {
+      "name": "tire_pressure_11",
+      "type": "int",
+      "doc": "Tire pressure in psi front left"
+    },
+    {
+      "name": "tire_pressure_12",
+      "type": "int",
+      "doc": "Tire pressure in psi front right"
+    },
+    {
+      "name": "tire_pressure_21",
+      "type": "int",
+      "doc": "Tire pressure in psi back left"
+    },
+    {
+      "name": "tire_pressure_22",
+      "type": "int",
+      "doc": "Tire pressure in psi back right"
+    },
+    {
+      "name": "accelerometer_11_value",
+      "type": "float",
+      "doc": "Acceleration in m/s^2 of the front left chassis accelerometer"
+    },
+    {
+      "name": "accelerometer_12_value",
+      "type": "float",
+      "doc": "Acceleration in m/s^2 of the front right chassis accelerometer"
+    },
+    {
+      "name": "accelerometer_21_value",
+      "type": "float",
+      "doc": "Acceleration in m/s^2 of the back left chassis accelerometer"
+    },
+    {
+      "name": "accelerometer_22_value",
+      "type": "float",
+      "doc": "Acceleration in m/s^2 of the back right chassis accelerometer"
+    },
+    {
+      "name": "control_unit_firmware",
+      "type": "int",
+      "doc": "Firmware version, increasing integer, shows outdated systems"
+    },
+    {
+      "name": "failure_occurred",
+      "type": "string",
+      "doc": "Marked true if any of the failure modes occurred, for labeling purposes"
+    }
+  ]
+}
