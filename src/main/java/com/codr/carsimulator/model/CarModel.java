@@ -3,6 +3,8 @@ package com.codr.carsimulator.model;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
 import static java.lang.StrictMath.min;
@@ -14,6 +16,16 @@ import static org.apache.commons.lang3.RandomUtils.nextInt;
  */
 @Component
 public class CarModel {
+
+    public String carId = UUID.randomUUID().toString();
+
+    public String getCarId() {
+        return carId;
+    }
+
+    public void setCarId(String carId) {
+        this.carId = carId;
+    }
 
     // Failure Modes
     private static final float SHOCK_DEGRADATION_PROBABILITY = 1F;
