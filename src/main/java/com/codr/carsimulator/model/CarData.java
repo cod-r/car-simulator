@@ -5,11 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class CarData {
+    private String carId;
+    private Instant timestamp;
     private float coolantTemp;
     private float intakeAirTemp;
     private float intakeAirFlowSpeed;

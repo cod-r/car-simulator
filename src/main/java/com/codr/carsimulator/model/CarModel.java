@@ -3,6 +3,7 @@ package com.codr.carsimulator.model;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
 import java.util.UUID;
 
 import static java.lang.Math.abs;
@@ -21,10 +22,6 @@ public class CarModel {
 
     public String getCarId() {
         return carId;
-    }
-
-    public void setCarId(String carId) {
-        this.carId = carId;
     }
 
     // Failure Modes
@@ -166,6 +163,8 @@ public class CarModel {
                 1000
                 : 2000;
         final CarData nextModel = CarData.builder()
+                .carId(this.carId)
+                .timestamp(Instant.now())
                 .throttlePos(previousThrottlePos)
                 .intakeAirFlowSpeed(prevIntakeAirSpeed)
                 .intakeAirTemp(intakeAirTemp)

@@ -11,16 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9700ade-ea06-4dd1-a796-2c8f4e0f7f63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/car-simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/car-simulator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/CarSimulatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/CarSimulatorApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/cron/Cron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/model/CarData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/model/CarData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/model/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codr/carsimulator/model/CarModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/CarSimulatorApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/CarSimulatorApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/cron/Cron.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/model/CarData$CarDataBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/model/CarData$CarDataBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/model/CarData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/model/CarData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/model/CarModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codr/carsimulator/model/CarModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,8 +94,17 @@
       <workItem from="1621537939397" duration="108000" />
       <workItem from="1621538056979" duration="2296000" />
       <workItem from="1621540440257" duration="5204000" />
-      <workItem from="1621669003513" duration="4469000" />
+      <workItem from="1621669003513" duration="6194000" />
+      <workItem from="1622138865431" duration="2167000" />
     </task>
+    <task id="LOCAL-00001" summary="add one mqtt connection per CarModel">
+      <created>1621677923668</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621677923668</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +122,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add one mqtt connection per CarModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="add one mqtt connection per CarModel" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="2537" y="344" width="665" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1621539563234">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -127,45 +139,53 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2613" y="288" width="524" height="510" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621545618267" />
+    <state x="2102" y="108" width="1536" height="879" key="DiffContextDialog" timestamp="1621677943992">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2102" y="108" width="1536" height="879" key="DiffContextDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677943992" />
     <state x="2662" y="301" width="424" height="491" key="FileChooserDialogImpl" timestamp="1621541027012">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2662" y="301" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621541027012" />
-    <state width="1874" height="450" key="GridCell.Tab.0.bottom" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.0.bottom" timestamp="1622140819426">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.0.center" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819426" />
+    <state width="1874" height="331" key="GridCell.Tab.0.center" timestamp="1622140819425">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.0.left" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819425" />
+    <state width="1874" height="331" key="GridCell.Tab.0.left" timestamp="1622140819425">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.0.right" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819425" />
+    <state width="1874" height="331" key="GridCell.Tab.0.right" timestamp="1622140819426">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.1.bottom" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819426" />
+    <state width="1874" height="331" key="GridCell.Tab.1.bottom" timestamp="1622140819426">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.1.center" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819426" />
+    <state width="1874" height="331" key="GridCell.Tab.1.center" timestamp="1622140819426">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.1.left" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819426" />
+    <state width="1874" height="331" key="GridCell.Tab.1.left" timestamp="1622140819426">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
-    <state width="1874" height="450" key="GridCell.Tab.1.right" timestamp="1621677263275">
+    <state width="1874" height="331" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819426" />
+    <state width="1874" height="331" key="GridCell.Tab.1.right" timestamp="1622140819426">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="450" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677263275" />
+    <state width="1874" height="331" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1622140819426" />
     <state x="2361" y="175" width="1037" height="737" key="SettingsEditor" timestamp="1621541033899">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2361" y="175" width="1037" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621541033899" />
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1621677945050">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1621677945050" />
   </component>
 </project>

@@ -4,6 +4,8 @@ import com.codr.carsimulator.model.CarData;
 import com.codr.carsimulator.model.CarModel;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.eclipse.paho.client.mqttv3.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -44,10 +46,12 @@ public class CarSimulatorApplication {
                     System.out.println(carData);
 
                     ObjectMapper om = new ObjectMapper();
+                    om.registerModule(new JavaTimeModule());
+                    om.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
                     MqttMessage msg = new MqttMessage(om.writeValueAsBytes(carData));
                     msg.setQos(1);
                     msg.setRetained(true);
-                    mqttClient.publish("/testing", msg);
+                    mqttClient.publish("/mjson", msg);
 
                 } catch (MqttException | JsonProcessingException e) {
                     e.printStackTrace();
