@@ -1,5 +1,5 @@
 
-### Install kafka via strimzi:
+### Deploy kafka via strimzi:
 
 [https://strimzi.io/docs/operators/latest/deploying.html#deploy-tasks-prereqs_str](https://strimzi.io/docs/operators/latest/deploying.html#deploy-tasks-prereqs_str)
 
@@ -18,7 +18,7 @@ Topics:
 
 `kubectl delete kafkatopic cars -n kafka`
 
-#### Install Kafka Connect
+#### Deploy Kafka Connect
 
 1.  Download mqtt connector and extract:
 [https://github.com/lensesio/stream-reactor/releases/download/2.1.3/kafka-connect-mqtt-2.1.3-2.5.0-all.tar.gz](https://github.com/lensesio/stream-reactor/releases/download/2.1.3/kafka-connect-mqtt-2.1.3-2.5.0-all.tar.gz)
@@ -110,9 +110,56 @@ EOF
 8.  Delete connector config
     
 `curl -s -X DELETE -H 'Content-Type: application/json' http://my-connect-cluster-connect-api:8083/connectors/mqtt-connector`
+#### Deploy Schema Registry
+```yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: registry-client
+  namespace: kafka
+spec:
+  ports:
+  - port: 8081
+  clusterIP: None
+  selector:
+    app: my-registry
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-cluster-schema-registry
+  namespace: kafka
+spec:
+  selector:
+    matchLabels:
+      app: "my-registry"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-registry
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: my-cluster-schema-registry
+          image: confluentinc/cp-schema-registry 
+          env:  # see https://docs.confluent.io/current/schema-registry/installation/config.html
+            - name: SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS
+              value: PLAINTEXT://my-cluster-kafka-bootstrap:9092
+            - name: SCHEMA_REGISTRY_HOST_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: SCHEMA_REGISTRY_LISTENERS
+              value: http://0.0.0.0:8081
+            - name: SCHEMA_REGISTRY_KAFKASTORE_SECURITY_PROTOCOL
+              value: PLAINTEXT
+          ports:
+            - containerPort: 8081 
+ ```
 
-
-## Install EMQX
+## Deploy EMQX
 
 `helm install emqx emqx/emqx --namespace kafka`
 
